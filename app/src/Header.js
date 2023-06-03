@@ -7,6 +7,7 @@ export const Header = () => {
   }
 
   const [count, setCount] = useState(99);
+  const [click, setclick] = useState("CLICK ME");
 
   function handleAddition() {
     setCount(count + 1)
@@ -16,11 +17,19 @@ export const Header = () => {
     setCount(count - 1);
   }
 
+  function handleClick() {
+    setclick("I GOT CLICKED !");
+    
+  }
+
   return (
     <>
       <button onClick={() => handleAddition()}>+</button>
       <span>{count}</span>
       <button onClick={() => handleSubtraction()}>-</button>
+
+      <p>{click}</p>
+      <button onClick={handleClick}>click me !</button>
     </>
   );
 };
